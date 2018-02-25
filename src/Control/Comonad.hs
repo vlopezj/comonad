@@ -4,6 +4,9 @@
 #elif __GLASGOW_HASKELL__ >= 702
 {-# LANGUAGE Trustworthy, DefaultSignatures #-}
 #endif
+#if __GLASGOW_HASKELL__ >= 706
+{-# LANGUAGE KindSignatures #-}
+#endif
  -----------------------------------------------------------------------------
 -- |
 -- Module      :  Control.Comonad
@@ -176,7 +179,11 @@ instance Comonad Identity where
   extract = runIdentity
   {-# INLINE extract #-}
 
+#if __GLASGOW_HASKELL__ >= 706
+instance Comonad (Tagged (s :: k)) where
+#else
 instance Comonad (Tagged s) where
+#endif
   duplicate = Tagged
   {-# INLINE duplicate #-}
   extract = unTagged
