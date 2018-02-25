@@ -5,7 +5,7 @@
 {-# LANGUAGE Trustworthy, DefaultSignatures #-}
 #endif
 #if __GLASGOW_HASKELL__ >= 706
-{-# LANGUAGE KindSignatures #-}
+{-# LANGUAGE KindSignatures, PolyKinds #-}
 #endif
  -----------------------------------------------------------------------------
 -- |
