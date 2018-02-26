@@ -4,6 +4,9 @@
 #elif __GLASGOW_HASKELL__ >= 702
 {-# LANGUAGE Trustworthy, DefaultSignatures #-}
 #endif
+#if __GLASGOW_HASKELL__ >= 706
+{-# LANGUAGE KindSignatures, PolyKinds #-}
+#endif
  -----------------------------------------------------------------------------
 -- |
 -- Module      :  Control.Comonad
